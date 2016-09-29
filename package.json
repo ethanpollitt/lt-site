@@ -1,0 +1,22 @@
+{
+    "name": "lt-site",
+    "version": "0.0.0",
+    "description": "Losing Teeth website",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "none"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ethanpollitt/lt-site.git"
+    },
+    "dependencies": {
+        "express": "latest"
+    },
+    "author": "Ethan Pollitt",
+    "license": "BSD",
+    "bugs": {
+        "url": "https://github.com/ethanpollitt/lt-site/issues"
+    }
+}
