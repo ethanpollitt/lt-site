@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Losing Teeth - Home</title>
 
+    <link rel="icon" type="image/png" href="/img/favicon3.png">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="css/cover.css" rel="stylesheet">
@@ -18,7 +20,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="lt-bg-img">
+<body class="lt-bg-img" data-ng-app="ltApp">
     <div class="site-wrapper lt-bg">
         <div class="site-wrapper-inner">
             <div class="cover-container">
@@ -28,16 +30,19 @@
                             <div class="container-fluid">
                                 <ul class="nav masthead-nav">
                                     <li>
+                                        <a href="#/">Home</a>
+                                    </li>
+                                    <li>
                                         <a href="https://losingteethfl.bandcamp.com/">Music</a>
                                     </li>
                                     <li>
                                         <a href="https://losingteeth.bigcartel.com/">Merch</a>
                                     </li>
                                     <li>
-                                        <a href="#">Dates</a>
+                                        <a href="#/dates">Dates</a>
                                     </li>
                                     <li>
-                                        <a href="#">Media</a>
+                                        <a href="#/media">Media</a>
                                     </li>
                                 </ul>
                             </div>
@@ -46,30 +51,7 @@
                 </div>
 
                 <div class="inner cover">
-                    <div>
-                        <img src="img/name1_v_black.png" height="250em"/>
-                        <p class="lead" style="margin-top: 2em;">
-                            <iframe height="315em" width="560em" src="https://www.youtube.com/embed/vuY4pmvc08Q" frameborder="0" allowfullscreen></iframe>
-                        </p>
-                    </div>
-                    
-                    <ul class="list-inline" style="margin-top: 4em;">
-                        <li>
-                            <a href="https://twitter.com/losingteethfl"><img src="img/twitter.png" height="30" width="30" /></a>
-                        </li>
-                        <li>
-                            <a href="https://facebook.com/losingteethfl"><img src="img/fb_144.png" height="30" width="30" /></a>
-                        </li>
-                        <li>
-                            <a href="https://instagram.com/losingteethfl"><img src="img/instagram.png" height="30" width="30" /></a>
-                        </li>
-                        <li>
-                            <a href="https://losingteethfl.tumblr.com/"><img src="img/tumblr_circular_blk.png" height="30" width="30" /></a>
-                        </li>
-                        <li>
-                            <a href="https://open.spotify.com/artist/1uGAlKUTKQTVhXsX1WqKuF"><img src="img/Spotify_Icon_RGB_Black.png" height="30" width="30" /></a>
-                        </li>
-                    </ul>
+                    <div data-ng-view></div>
                 </div>
                 
                 <div class="mastfoot clearfix">
@@ -87,5 +69,12 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
+    <script src="js/angular/angular.min.js"></script>
+    <script src="js/angular-route/angular-route.min.js"></script>
+    
+    <script src="app/app.js"></script>
+    <script src="app/controller/home.js"></script>
+    <script src="app/controller/dates.js"></script>
+    <script src="app/controller/media.js"></script>
 </body>
 </html>
