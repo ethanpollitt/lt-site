@@ -17,6 +17,7 @@ app.use("/css", express.static(__dirname + "/css"));
 app.use("/img", express.static(__dirname + "/img"));
 app.use("/js/angular", express.static(__dirname + "/node_modules/angular"));
 app.use("/js/angular-route", express.static(__dirname + "/node_modules/angular-route"));
+app.use("/js/angular-ui-bootstrap", express.static(__dirname + "/node_modules/angular-ui-bootstrap"));
 app.use("/app", express.static(__dirname + "/app"));
 
 app.use("*",function(req,res){

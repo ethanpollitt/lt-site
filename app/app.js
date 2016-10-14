@@ -1,4 +1,4 @@
-angular.module("ltApp", ["ngRoute"]);
+angular.module("ltApp", ["ngRoute", "ui.bootstrap"]);
 
 angular.module("ltApp").config(["$routeProvider", 
                                 function ($routeProvider) {        

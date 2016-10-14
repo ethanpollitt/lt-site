@@ -1,0 +1,26 @@
+<div style="margin: auto; max-width: 100em;">
+    <div class="row">
+        <div class="col-lg-12" style="color: #000;">
+            <div class="text-center">
+                <img src="img/media.png" height="120em"/>
+                <div class="lt-bg-center lt-bg-blur">
+                    <div class="clearfix">
+                        <iframe height="315em" width="560em" src="https://www.youtube.com/embed/vuY4pmvc08Q" frameborder="0" allowfullscreen></iframe>
+                        <iframe height="315em" width="560em" src="https://www.youtube.com/embed/eUmB_wBcp40" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div style="padding: 2.5em;">
+                        <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                            <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                                <img ng-src="{{slide.image}}" style="margin:auto;">
+                                <div class="carousel-caption">
+                                    <h4>Slide {{slide.id}}</h4>
+                                    <p>{{slide.text}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
