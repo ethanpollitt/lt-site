@@ -14,7 +14,17 @@ angular.module("ltApp").config(["$routeProvider",
 			templateUrl : "app/pages/media.html",
 			controller  : "MediaCtrl",
             controllerAs : "mediaCtrl"
+		}).when("/contact", {
+			templateUrl : "app/pages/contact.html",
+			controller  : "ContactCtrl",
+            controllerAs : "contactCtrl"
 		}).otherwise({
             redirectTo: "/"
         });
 }]);
+
+angular.module("ltApp").filter('capitalize', function() {
+    return function(input) {
+      return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    }
+});
