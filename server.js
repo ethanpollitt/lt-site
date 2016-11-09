@@ -1,7 +1,11 @@
+var compression = require('compression');
 var express = require("express");
 var app = express();
 var router = express.Router();
 var path = __dirname + '/';
+
+// Enable compression plugin
+app.use(compression());
 
 router.use(function (req,res,next) {
   console.log("/" + req.method);
