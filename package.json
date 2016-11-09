@@ -15,7 +15,8 @@
 		"express": "latest",
 		"angular": "1.5.8",
 		"angular-route": "1.5.8",
-		"angular-ui-bootstrap": "latest"
+		"angular-ui-bootstrap": "latest",
+		"compression": "latest"
 	},
 	"devDependencies": {
 	},
