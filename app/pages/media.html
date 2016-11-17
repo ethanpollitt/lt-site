@@ -4,10 +4,10 @@
             <img class="img-responsive" style="margin: 0 auto;" src="img/media.png"/>
             <div class="lt-bg-center lt-bg-blur">
                 <div style="padding: 1em;">
-                    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                    <div uib-carousel template-url="app/templates/carousel.html" active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-                            <img class="img-responsive" ng-src="{{slide.image}}" style="margin:auto;">
-                            <div class="carousel-caption">
+                            <img class="img-responsive carousel-img" ng-src="{{slide.image}}" style="margin:auto;">
+                            <div class="carousel-caption" style="font-size:10px;">
                                 <p>{{slide.text}}</p>
                             </div>
                         </div>
