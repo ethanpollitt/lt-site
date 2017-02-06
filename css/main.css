@@ -5,9 +5,7 @@ a, a:focus, a:hover {
 
 /* ========================================================= */
 
-html, body {
-    height: 100%;
-}
+html, body { height: 100%; }
 
 body {
     color: #fff;
@@ -15,9 +13,7 @@ body {
     text-shadow: 0 1px 3px rgba(0, 0, 0, .1);
 }
 
-.inner {
-    padding: 10px;
-}
+.inner { padding: 10px; }
 
 .cover {
     padding: 20px;
@@ -25,6 +21,7 @@ body {
 }
 
 /* ========================================================= */
+/* BACKGROUND */
 
 .lt-bg-wrapper {    
     background-color: rgba(225,220,235,.66);
@@ -49,10 +46,6 @@ body {
     border-radius: 30px;
 }
 
-.lt-dl-item {
-    padding: .5em;
-}
-
 .lt-bg-blur {
 /*
     -webkit-filter: blur(20px);
@@ -72,10 +65,25 @@ body {
     box-shadow: 0 0 1.5em rgba(0,0,0,.4);
 }
 
+/* ========================================================= */
+/* OTHER */
+
+.lt-left-col {
+    font-size: 1.6em;
+}
+
+.lt-right-col {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.lt-row {
+    padding-bottom: 2em;
+}
+
 .lt-content {
     padding-bottom: 10em;
 }
-
 
 .carousel-img {
     max-width: 100%;

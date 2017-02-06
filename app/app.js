@@ -1,4 +1,4 @@
-angular.module("ltApp", ["ngRoute", "ui.bootstrap"]);
+angular.module("ltApp", ["ngRoute", "ngSanitize", "ui.bootstrap"]);
 
 angular.module("ltApp").config(["$routeProvider", 
                                 function ($routeProvider) {        
@@ -15,9 +15,7 @@ angular.module("ltApp").config(["$routeProvider",
 			controller  : "MediaCtrl",
             controllerAs : "mediaCtrl"
 		}).when("/contact", {
-			templateUrl : "app/pages/contact.html",
-			controller  : "ContactCtrl",
-            controllerAs : "contactCtrl"
+			templateUrl : "app/pages/contact.html"
 		}).otherwise({
             redirectTo: "/"
         });
