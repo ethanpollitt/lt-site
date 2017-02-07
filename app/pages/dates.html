@@ -14,7 +14,7 @@
                         VENUE
                     </div>
                 </div>
-                <div class="row lt-row" data-ng-repeat="event in datesCtrl.events">
+                <div class="row lt-row" data-ng-repeat="event in events">
                     <div class="col-lg-4 col-md-4 col-sm-4">
                         <span class="lt-left-col">{{ event.date }}</span>
                     </div>
@@ -22,7 +22,7 @@
                         <span class="lt-right-col">{{ event.city}}, {{ event.state }}</span>
                     </div>
                     <div class="col-lg-4 col-md-2 col-sm-2">
-                        <span class="lt-right-col">@ {{ event.venue }} 
+                        <span class="lt-right-col">{{ event.venue }} 
                             <span data-ng-bind-html="datesCtrl.getTicketLink(event)"></span>
                         </span>
                     </div>

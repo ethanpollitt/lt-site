@@ -1,31 +1,19 @@
-var compression = require('compression');
 var express = require("express");
 var app = express();
-var router = express.Router();
+
 var path = __dirname + '/';
 
 // Enable compression plugin
+var compression = require("compression");
 app.use(compression());
 
-router.use(function (req,res,next) {
-  console.log("/" + req.method);
-  next();
-});
+var routing = require("./node/routing.js");
+routing.set(app, path)
 
-router.get("/",function(req,res){
-  res.sendFile(path + "index.html");
-});
+var apis = require("./node/api.js")
+apis.set(app, path);
 
-app.use("/",router);
-app.use("/css", express.static(__dirname + "/css"));
-app.use("/img", express.static(__dirname + "/img"));
-app.use("/js/angular", express.static(__dirname + "/node_modules/angular"));
-app.use("/js/angular-route", express.static(__dirname + "/node_modules/angular-route"));
-app.use("/js/angular-sanitize", express.static(__dirname + "/node_modules/angular-sanitize"));
-app.use("/js/angular-ui-bootstrap", express.static(__dirname + "/node_modules/angular-ui-bootstrap"));
-app.use("/app", express.static(__dirname + "/app"));
-
-app.use("*",function(req,res){
+app.use("*", function(req,res){
   res.sendFile(path + "404.html");
 });
 

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="adminApp" data-ng-controller="DatesCtrl as datesCtrl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title data-ng-bind="'Losing Teeth - ' + (cr | capitalize)">Losing Teeth</title>
+
+    <link rel="icon" type="image/png" href="/img/favicon7.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/admin.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" style="color: #000;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <th>DATE</th>
+                        <th>CITY</th>
+                        <th>STATE</th>
+                        <th>VENUE</th>
+                        <th>TICKET LINK</th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <tr class="lt-row" data-ng-repeat="event in events">
+                            <td>{{ event.date }}</td>
+                            <td>{{ event.city}}</td>
+                            <td>{{ event.state }}</td>
+                            <td>{{ event.venue }}</td>
+                            <td>{{ getTicketLink(event) }}</td>
+                            <td>
+                                <button type="button" class="btn btn-danger" data-ng-click="delete(event)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <button type="button" class="btn btn-primary" data-ng-click="showForm = true">Add Event</button>
+                <div style="padding-top: 2em" data-ng-show="showForm">
+                    <form method="post" class="form form-inline">
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input id="date" name="date" type="text" data-ng-model="date" required/> 
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input id="city" name="city" type="text" data-ng-model="city"  required/> 
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input id="state" name="state" type="text" data-ng-model="state" required /> 
+                        </div>
+                        <div class="form-group">
+                            <label for="venue">Venue</label>
+                            <input id="venue" name="venue" type="text" data-ng-model="venue"  required/> 
+                        </div>
+                        <div class="form-group">
+                            <label for="ticketLink">Ticket Link</label>
+                            <input id="ticketLink" name="ticketLink" data-ng-model="ticketLink"  type="text"/> 
+                        </div>
+                        <button type="button" class="btn btn-default" data-ng-click="showForm = false">Cancel</button>
+                        <button type="button" class="btn btn-success" data-ng-click="submit()">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <script src="/js/angular/angular.min.js"></script>
+    <script src="/js/angular-route/angular-route.min.js"></script>
+    <script src="/js/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="/js/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    
+    <script src="/admin/app.js"></script>
+    <script src="/admin/services.js"></script>
+    <script src="/admin/controller/dates.js"></script>
+</body>
+</html>
