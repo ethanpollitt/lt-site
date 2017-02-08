@@ -33,12 +33,12 @@
                         <th></th>
                     </thead>
                     <tbody>
-                        <tr class="lt-row" data-ng-repeat="event in events">
+                        <tr class="lt-row" data-ng-repeat="event in events | orderBy: 'date_real'">
                             <td>{{ event.date }}</td>
                             <td>{{ event.city}}</td>
                             <td>{{ event.state }}</td>
                             <td>{{ event.venue }}</td>
-                            <td>{{ getTicketLink(event) }}</td>
+                            <td><a target="_" href="{{ event.ticketLink }}">{{ event.ticketLink }}</a></td>
                             <td>
                                 <button type="button" class="btn btn-danger" data-ng-click="delete(event)">Delete</button>
                             </td>

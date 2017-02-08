@@ -9,6 +9,9 @@ function($scope, $window, server) {
     
     // get events from server
     server.getEvents().then(function(data) {
+        data.forEach(function(obj, ind) {
+            obj.date_real = new Date(obj.date);
+        });
         $scope.events = data;
     });
     

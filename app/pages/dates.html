@@ -14,7 +14,7 @@
                         VENUE
                     </div>
                 </div>
-                <div class="row lt-row" data-ng-repeat="event in events">
+                <div class="row lt-row" data-ng-repeat="event in events | orderBy: 'date_real'">
                     <div class="col-lg-4 col-md-4 col-sm-4">
                         <span class="lt-left-col">{{ event.date }}</span>
                     </div>
