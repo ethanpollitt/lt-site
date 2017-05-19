@@ -1,3 +1,4 @@
+var crypto = require('crypto');
 var express = require("express");
 var app = express();
 
@@ -12,6 +13,9 @@ routing.set(app, path)
 
 var apis = require("./node/api.js")
 apis.set(app, path);
+
+var helmet = require("helmet");
+app.use(helmet());
 
 app.use("*", function(req,res){
   res.sendFile(path + "404.html");

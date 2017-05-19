@@ -1,5 +1,7 @@
 angular.module("adminApp").controller("DatesCtrl", ["$scope", "$window", "server", 
 function($scope, $window, server) {
+    $scope.showForm = false;
+    
     $scope.events = [];
     $scope.date = null;
     $scope.city = null;
@@ -9,6 +11,9 @@ function($scope, $window, server) {
     
     // get events from server
     server.getEvents().then(function(data) {
+        if(data == null || data == undefined || !Array.isArray(data))
+            return;
+        
         data.forEach(function(obj, ind) {
             obj.date_real = new Date(obj.date);
         });

@@ -21,7 +21,8 @@
         "angular-sanitize": "1.5.8",
         "angular-ui-bootstrap": "latest",
         "compression": "latest",
-        "mongoose": "latest"
+        "mongoose": "latest",
+        "helmet": "latest"
 	},
 	"devDependencies": {
 	},

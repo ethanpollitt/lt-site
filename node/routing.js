@@ -78,4 +78,8 @@ module.exports.set = function(app, path) {
     app.get("/admin/dates", checkAuth, function(req, res) {
         res.sendFile(path + "/admin/pages/dates.html");
     });
+    
+    app.get("/admin/images", checkAuth, function(req, res) {
+        res.sendFile(path + "/admin/pages/images.html");
+    });
 };

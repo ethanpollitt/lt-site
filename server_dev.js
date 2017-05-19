@@ -10,7 +10,7 @@ app.use(compression());
 var routing = require("./node/routing.js");
 routing.set(app, path)
 
-var apis = require("./node/api.js")
+var apis = require("./node/api.js");
 apis.set(app, path);
 
 app.use("*", function(req,res){

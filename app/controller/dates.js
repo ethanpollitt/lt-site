@@ -4,6 +4,9 @@ function($scope, server) {
     
     // get events from server
     server.getDates().then(function(data) {
+        if(data == null || data == undefined || !Array.isArray(data))
+            return;
+        
         data.forEach(function(obj, ind) {
             obj.date_real = new Date(obj.date);
         });
