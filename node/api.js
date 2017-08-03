@@ -21,10 +21,15 @@ module.exports.set = function(app, path) {
     });
     
     var imagesSchema = mongoose.Schema({
-        id: Number,
         path: String,
         text: String,
         date: String
+    });
+    
+    var emailsSchema = mongoose.Schema({
+        email: String,
+        firstName: String,
+        lastName: String
     });
     
     /* ================================== */
@@ -48,7 +53,7 @@ module.exports.set = function(app, path) {
     // Endpoints below
     
 
-    // Dates
+    // Dates ###############
     app.get("/api/auth", function(req, res) {
         var date = new Date();
         var hash = crypto.createHmac("sha1", new Date().setMinutes(0, 0, 0).valueOf.toString()).update(secret).digest("hex");
@@ -95,7 +100,7 @@ module.exports.set = function(app, path) {
     });
     
     
-    // Images
+    // Images ###############
     app.get("/api/images", function(req, res) {
         var Images = mongoose.model("Images", imagesSchema);
 
@@ -135,6 +140,32 @@ module.exports.set = function(app, path) {
         console.log("Removing image: " + req.query.id);
         
         Images.findByIdAndRemove(req.query.id, function (error, small) {
+            if(error)
+                res.end(error);
+            else    // saved successfully
+                res.end(JSON.stringify({error: false, description: "success!"}));
+        });
+    });
+    
+        
+    // Email ###############
+    app.get("/api/emails", checkApiAuth, function(req, res) {
+        var Emails = mongoose.model("Emails", emailsSchema);
+        
+        Emails.find().exec(function(error, data) {
+            res.end(JSON.stringify(data));
+        });
+    });
+    
+    app.post("/api/emails", checkApiAuth, function(req, res) {
+        var Emails = mongoose.model("Emails", emailsSchema);
+        var newEmail = req.body.body;
+        
+        // TODO: need some validation
+        
+        console.log("Creating new email subscriber: " + JSON.stringify(newEmail));
+        
+        Emails.create(newEmail, function (error, small) {
             if(error)
                 res.end(error);
             else    // saved successfully

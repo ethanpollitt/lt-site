@@ -4,22 +4,15 @@
             <img class="img-responsive" style="margin: 0 auto;" src="img/media.png"/>
             <div data-ng-repeat="image in images track by image._id">
                 <a data-ng-click="openImage(image)" href="">
-                    <img class="img-responsive" data-ng-src="{{ image.path }}" style="margin:auto;">
-                    <div class="modal" data-ng-show="image.fullscreen">
-                        <span class="close" data-ng-click="closeImage(image)">&times;</span>
-                        <img class="modal-content" data-ng-src="{{ image.path }}" >
-                        <!--<div id="caption">{{ image.text }}</div>-->
+                    <img class="img-responsive" data-ng-src="{{ image.path }}" style="margin:auto;"> 
+                    <div class="overlay" data-ng-style="image.class">
+                        <a href="javascript:void(0)" class="closebtn" data-ng-click="closeImage(image)">&times;</a>
+                        <div class="overlay-content">
+                            <img data-ng-src="{{ image.path }}" >
+                        </div>
                     </div>
                 </a>
             </div>
-<!--            <div uib-carousel template-url="app/templates/carousel.html" active="active" interval="myInterval" no-wrap="noWrapSlides">
-                <div uib-slide data-ng-repeat="image in images track by image._id" index="image.id">
-                    <img class="img-responsive carousel-img" data-ng-src="{{ image.path }}" style="margin:auto;">
-                    <div class="carousel-caption" style="font-size:.6em;">
-                        <p>{{slide.text}}</p>
-                    </div>
-                </div>
-            </div>-->
         </div>
     </div>
 </div>

@@ -10,18 +10,19 @@ function($scope, server) {
         data.forEach(function(obj, ind) {
             obj.date_real = new Date(obj.date);
             obj.fullscreen = false;
+            obj.class = {"height": "0"};
         });
         $scope.images = data;
     });
     
-    $scope.openImage = function(image) {
-        console.log("here1");
-        image.fullscreen = true;
-    };
+//    $scope.openImage = function(image) {
+//        console.log("open", image._id, image.class);
+//        image.class = {"height": "100%"};
+//    };
     
     $scope.closeImage = function(image) {
-        console.log("her32");
-        image.fullscreen = false;
+        console.log("close", image._id, image.class);
+        image.class = {"height": "0"};
     };
     
 }]);
